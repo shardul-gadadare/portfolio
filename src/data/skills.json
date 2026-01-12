@@ -1,0 +1,51 @@
+{
+    "languages": [
+        "Python",
+        "Java",
+        "JavaScript",
+        "TypeScript",
+        "C++",
+        "C",
+        "SQL"
+    ],
+    "backendApis": [
+        "Node.js",
+        "Express.js",
+        "Django",
+        "Django REST Framework",
+        "Spring Boot",
+        "REST APIs"
+    ],
+    "frontend": [
+        "React",
+        "Next.js",
+        "React Native",
+        "HTML",
+        "CSS",
+        "TailwindCSS"
+    ],
+    "databases": [
+        "PostgreSQL",
+        "MySQL",
+        "MongoDB",
+        "DynamoDB"
+    ],
+    "cloudDevOps": [
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "GitHub Actions",
+        "GitLab CI/CD",
+        "Linux"
+    ],
+    "testing": [
+        "Unit Testing",
+        "Integration Testing",
+        "End-to-End Testing",
+        "Jest",
+        "PyTest",
+        "JUnit",
+        "Load Testing"
+    ]
+}
