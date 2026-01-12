@@ -1,0 +1,274 @@
+[
+    {
+        "slug": "appli-tracker",
+        "title": "Appli-Tracker",
+        "category": "Full-Stack",
+        "featured": true,
+        "summary": "MERN job-application CRM with reminders, calendar view, and analytics to keep searches organized and actionable.",
+        "shortDescription": "Job application tracker with analytics dashboard",
+        "role": "Full-Stack Developer",
+        "techStackSummary": "MongoDB • Node.js • Express.js(REST) • React",
+        "github": "https://github.com/shardul-gadadare/appli-tracker",
+        "liveDemo": null,
+        "context": "Job searches quickly become unmanageable when applications are scattered across spreadsheets, job portals, and email threads. Appli-Tracker consolidates everything into a single, MERN-based dashboard where candidates can track statuses, interviews, and notes, while automated reminders prevent missed follow-ups. Lightweight analytics highlight which roles, companies, and stages are performing best, helping users focus effort where it actually pays off instead of blindly applying and hoping.",
+        "outcomes": [
+            "Improved application tracking efficiency by consolidating statuses, reminders, and a calendar view into one workflow",
+            "Reduced missed follow-ups by implementing automated reminder notifications tied to application stage dates",
+            "Improved API responsiveness by profiling slow endpoints and optimizing query patterns and indexes for common filters (stage, company, date)",
+            "Enabled job-search insights via lightweight analytics (applications over time, stage conversion, response rate trends)"
+        ],
+        "architecture": "Appli-Tracker follows a classic MERN architecture with a React single-page application talking to a Node.js/Express REST API. MongoDB, accessed via Mongoose, stores users, applications, notes, and reminders with schema-level validation. The backend is structured into routes, controllers, services, and data-access layers to keep business logic isolated from HTTP and persistence concerns, making it easy to extend with new filters, views, or integrations over time.",
+        "techStack": {
+            "database": "MongoDB",
+            "backend": "Node.js, Express.js",
+            "api": "RESTful API",
+            "auth":"",
+            "security": "Input Validation",
+            "frontend": "React",
+            "deployment": ""
+        },
+        "implementationHighlights": [
+            "Structured the Express.js backend into routes → controllers → services → data-access layers to enforce separation of concerns and simplify testing",
+            "Implemented optimistic UI updates in React so status changes feel instant while the API confirms updates in the background",
+            "Designed MongoDB schemas with compound indexes on fields like status, company, and lastUpdated to support fast filtering and search",
+            "Built a reusable notification module to schedule and send email or in-app reminders for upcoming deadlines and stale applications",
+            "Integrated a lightweight charting library to visualize application trends (success rate, stages over time) without overcomplicating the frontend stack"
+        ],
+        "cloudDevOps": null,
+        "improvements": [
+            "Add machine learning-based suggestions for application timing based on historical data",
+            "Implement browser extension for one-click application capture from job boards",
+            "Add collaborative features for sharing job leads with other users"
+        ]
+    },
+    {
+        "slug": "degreepilot",
+        "title": "DegreePilot",
+        "category": "Full-Stack",
+        "featured": false,
+        "summary": "Full-stack course planner with prerequisite checks, schedule conflict detection, and degree-audit progress tracking.",
+        "shortDescription": "Academic planning and degree tracking platform",
+        "role": "Full-Stack Developer",
+        "techStackSummary": "PostgreSQL • Django • DRF • React",
+        "github": "https://github.com/shardul-gadadare/degree-pilot",
+        "liveDemo": null,
+        "context": "University students often rely on clumsy spreadsheets and guesswork to plan semesters, only to discover missing prerequisites or graduation delays late in the game. DegreePilot replaces this with a proper planning experience: a Django + PostgreSQL backend models courses, prerequisites, and degree requirements, while a React frontend lets students build term-by-term plans with real-time validation. The system checks prerequisites, flags time conflicts, and visualizes progress toward degree completion, turning what used to be a frustrating puzzle into a guided planning workflow that students and advisors can trust.",
+        "outcomes": [
+            "Reduced average degree planning time by roughly 50% compared to manual spreadsheet-based planning in pilot usage",
+            "Prevented an estimated 30% of invalid course selections during planning by enforcing real-time prerequisite checks and conflict detection",
+            "Designed to support hundreds of concurrent users by combining efficient PostgreSQL indexing with smart client-side caching via React Query",
+            "Increased system reliability by building out high test coverage in key planning logic through unit and integration tests"
+        ],
+        "architecture": "DegreePilot is a full-stack planner built with Django REST Framework on the backend and React on the frontend. PostgreSQL stores normalized relational data for courses, offerings, prerequisites, degree requirements, and student plans. The backend is organized into domain-focused Django apps (courses, requirements, planning) with DRF viewsets exposing RESTful APIs. The React client uses React Query to handle data fetching, caching, and background refetching, providing responsive UI updates as students manipulate term plans. The system is deployed with a Django API on Render and a React SPA on Vercel, wired together via GitHub Actions CI/CD.",
+        "techStack": {
+            "database": "PostgreSQL",
+            "backend": "Django, Django REST Framework",
+            "api": "RESTful API(DRF)",
+            "auth": "JWT",
+            "security": "RBAC, input validation, throttling/rate limits, CORS",
+            "frontend": "React, React Query, React Router, TailwindCSS",
+            "deployment": "GitHub Actions CI/CD"
+        },
+        "implementationHighlights": [
+            "Designed a normalized PostgreSQL schema modeling courses, prerequisites, degree requirements, and student term plans to support flexible queries and consistent data",
+            "Built a graph-based prerequisite engine using topological sorting to validate course sequences and flag missing requirements as students modify plans",
+            "Implemented batch APIs and bulk operations for adding/updating multiple course selections at once to keep the UI responsive during large edits",
+            "Created custom Django management commands to import and refresh catalog/semester data from external sources",
+            "Leveraged React Query for declarative data fetching, cache invalidation, and background refetch to keep the UI in sync without excessive API calls"
+        ],
+        "cloudDevOps": null,
+        "improvements": [
+            "Add AI-powered course recommendations based on student interests and career goals",
+            "Implement what-if analysis for exploring different major/minor combinations",
+            "Build mobile app for on-the-go schedule viewing"
+        ]
+    },
+    {
+        "slug": "oncallops",
+        "title": "OnCallOps",
+        "category": "Full-Stack",
+        "featured": false,
+        "summary": "Full-stack incident and postmortem platform that streamlines on-call workflows, timelines, and follow-up actions for engineering teams.",
+        "shortDescription": "Incident management and on-call scheduling platform",
+        "role": "Full-Stack Developer",
+        "techStackSummary": "PostgreSQL • Spring Boot • REST • React",
+        "github": "https://github.com/shardul-gadadare/oncall-ops",
+        "liveDemo": null,
+        "context": "Traditional ticketing tools capture issues, but they rarely support the full lifecycle of high-severity incidents; who responded, what happened when, and which follow-ups actually got done. OnCallOps combines familiar ticketing with SEV workflows, incident timelines, and structured postmortems in a single Spring Boot + React application. Engineers can declare incidents, log key events, assign ownership, and capture root causes and action items, while role-based dashboards keep on-call staff and managers aligned. The result is a clearer on-call process, stronger audit trails, and fewer “we promised to fix this last outage and never did” moments.",
+        "outcomes": [
+            "Reduced manual incident and ticket tracking effort by an estimated 60% by centralizing SEV workflows, timelines, and postmortems in a single system",
+            "Designed to handle thousands of daily interactions (ticket updates, timeline events, notifications) while keeping response times low through efficient DB access and caching",
+            "Improved on-call responsiveness by shortening time-to-acknowledge incidents via targeted notifications and clear visibility into active SEVs",
+            "Increased reliability of incident history by enforcing complete audit trails for status changes, responders, and follow-up actions"
+        ],
+        "architecture": "OnCallOps is a full-stack operations system with a Spring Boot REST API and PostgreSQL as the system of record for tickets, SEV incidents, timelines, SLAs, postmortems, and follow-up action items. The React frontend provides role-based workflows (user vs engineer/on-call vs admin) and interacts with the backend via authenticated REST endpoints. The backend is structured into controllers/services/repositories with clear domain boundaries for ticket lifecycle and incident/postmortem workflows. CI/CD is handled via GitHub Actions, deploying the Spring Boot backend on Render and the frontend on Vercel.",
+        "techStack": {
+            "database": "PostgreSQL",
+            "backend": "Spring Boot, Spring Data JPA, Spring Security",
+            "api": "RESTful APIs",
+            "auth": "JWT",
+            "security": "RBAC, input validation, audit logging, rate limiting, CORS",
+            "frontend": "React",
+            "deployment": "GitHub Actions CI/CD"
+        },
+        "implementationHighlights": [
+            "Modeled incidents, timelines, and tickets with PostgreSQL + Spring Data JPA, ensuring transactional consistency for critical state changes",
+            "Implemented role-based access control (RBAC) with Spring Security and JWTs to separate user, engineer, and admin capabilities",
+            "Added audit logging for state transitions to support traceability and enforced request validation via annotations and consistent error responses for frontend handling",
+            "Implemented basic rate limiting for authentication and write-heavy endpoints to reduce abuse and protect service stability",
+            "Automated builds and deployments using GitHub Actions, running tests and redeploying the Spring Boot service to Render and the React frontend to Vercel"
+        ],
+        "cloudDevOps": {
+            "infrastructure": "Kubernetes cluster with horizontal pod autoscaling",
+            "cicd": "GitHub Actions with automated testing and deployment",
+            "monitoring": "Prometheus metrics, Grafana dashboards, structured logging",
+            "improvements": "Achieved zero-downtime deployments with rolling updates"
+        },
+        "improvements": [
+            "Add machine learning for incident severity prediction and auto-routing",
+            "Implement runbook automation for common incident types",
+            "Build mobile app for on-call engineers"
+        ]
+    },
+    {
+        "slug": "nutrikit",
+        "title": "Nutrikit",
+        "category": "Cloud & AI",
+        "featured": true,
+        "summary": "Serverless nutrition tracker using AI image recognition to auto-log meals and generate personalized diet guidance on AWS.",
+        "shortDescription": "AI-powered nutrition tracking with serverless backend",
+        "role": "Cloud Developer",
+        "techStackSummary": "DynamoDB • AWS Lambda • API Gateway • React Native • Terraform",
+        "github": "https://github.com/shardul-gadadare/nutrikit",
+        "liveDemo": null,
+        "context": "Most people know they should “eat better,” but tracking every meal by hand is tedious enough that they give up. Nutrikit turns nutrition logging into a low-friction workflow: users snap a picture of their meal, and an AWS-backed pipeline (Rekognition, Lambda, DynamoDB, API Gateway) identifies foods, estimates nutrition, and logs entries automatically. A React Native app surfaces daily summaries, AI-generated diet suggestions, and chatbot-style Q&A, while the serverless architecture scales with demand and keeps infrastructure overhead minimal.",
+        "outcomes": [
+            "Designed the backend to comfortably handle thousands of daily nutrition logging requests in load testing, with Lambda and DynamoDB auto-scaling based on demand",
+            "Leveraged fully managed AWS services (Lambda, DynamoDB, API Gateway, Cognito) to achieve high availability without managing servers or patching VMs",
+            "Reduced manual food logging time by ~80% in internal trials by letting users log meals from images instead of typing everything manually",
+            "Demonstrated significant cost savings versus an always-on EC2-style deployment by paying primarily for per-request usage in the serverless design"
+        ],
+        "architecture": "Nutrikit uses a fully serverless architecture on AWS. An API Gateway front door routes HTTP calls to AWS Lambda functions that implement business logic for logging meals, generating diet plans, and answering chatbot queries. DynamoDB stores user profiles, meals, and recommendations using a single-table design, while S3 holds uploaded food images. Food recognition is powered by AWS Rekognition (and can be swapped for a SageMaker-hosted model if needed). Authentication is handled via Amazon Cognito, and CloudWatch captures logs and metrics for observability. A React Native mobile app communicates with these APIs to provide a smooth, mobile-first experience.",
+        "techStack": {
+            "database": "DynamoDB, S3 for image storage",
+            "backend": "AWS Lambda",
+            "api": "REST API via API Gateway, OpenAI API",
+            "auth": "AWS Cognito",
+            "security": "IAM roles, API key validation, encrypted data at rest",
+            "frontend": "React",
+            "deployment": "Terraform IaC, GitHub Actions CI/CD"
+        },
+        "implementationHighlights": [
+            "Designed a single-table DynamoDB schema using partition/sort keys and GSIs tuned to common access patterns (by user, date, and meal type)",
+            "Implemented Lambda functions with minimal cold start overhead by trimming dependencies, reusing connections, and sharing configuration across invocations where safe",
+            "Integrated AWS Rekognition to extract food labels and confidence scores from images, feeding them into Nutrikit’s nutrition logic",
+            "Standardized error handling and structured logging in Lambda functions to send meaningful logs and metrics to CloudWatch for debugging and monitoring",
+            "Built an offline-friendly React Native app with local caching and a background sync flow so users can log meals even on flaky connections"
+        ],
+        "cloudDevOps": {
+            "infrastructure": "100% Infrastructure as Code with Terraform modules",
+            "cicd": "GitHub Actions with automated testing, linting, and deployment",
+            "monitoring": "CloudWatch alarms, X-Ray distributed tracing, custom dashboards",
+            "improvements": "Reduced Lambda cold starts by 50% through provisioned concurrency"
+        },
+        "improvements": [
+            "Add meal planning suggestions based on nutritional goals and history",
+            "Implement social features for sharing meals and recipes",
+            "Expand AI model to recognize more regional cuisines"
+        ]
+    },
+    {
+        "slug": "fitflow",
+        "title": "FitFlow",
+        "category": "Cloud",
+        "featured": false,
+        "summary": "Serverless backend for occupancy-aware workout planning, combining live facility signals with schedules, reminders, and recommendations.",
+        "shortDescription": "Serverless gym occupancy and fitness tracking",
+        "role": "Cloud Developer",
+        "techStackSummary": "DynamoDB • AWS Lambda • API Gateway • React Native • Terraform",
+        "github": "https://github.com/shardul-gadadare/fitflow",
+        "liveDemo": null,
+        "context": "Showing up to a packed gym at peak hours wastes time and kills motivation, especially on tight student or professional schedules. FitFlow ingests live or near-real-time occupancy signals from gym facilities into an event-driven AWS backend (Lambda, DynamoDB, EventBridge, API Gateway) and exposes APIs that mobile clients can query for current crowd levels. On top of that, it cross-references historical occupancy trends with a user’s workout plan and calendar availability to suggest ideal times to train, helping people build more consistent routines without fighting for equipment every session.",
+        "outcomes": [
+            "Architected to process thousands of occupancy events per day in test workloads while maintaining sub-second end-to-end processing through Lambda and DynamoDB",
+            "Designed the API to support 1K+ concurrent requests with low p95 latency by leveraging serverless auto-scaling and efficient data access patterns",
+            "Aims to reduce missed workouts and improve weekly consistency by suggesting optimal times to train based on historical occupancy and user availability",
+            "Minimized operational overhead by relying on fully managed AWS services, eliminating server maintenance tasks"
+        ],
+        "architecture": "FitFlow uses an event-driven, serverless architecture on AWS. Live occupancy signals from gym facilities are ingested and processed by AWS Lambda functions, which write time-stamped snapshots to DynamoDB with TTL for rolling data retention. An API Gateway HTTP API exposes REST endpoints to the mobile client for current occupancy and workout schedule data. EventBridge triggers scheduled jobs for daily aggregation and recommendation updates. The mobile frontend consumes these APIs to surface live occupancy, schedules, and personalized recommendations.",
+        "techStack": {
+            "database": "DynamoDB",
+            "backend": "AWS Lambda",
+            "api": "REST API via API Gateway",
+            "auth": "AWS Cognito",
+            "security": "IAM least-privilege roles, encryption at rest, request/input validation",
+            "frontend": "React",
+            "deployment": "Terraform IaC, GitHub Actions CI/CD"
+        },
+        "implementationHighlights": [
+            "Implemented HTTP API endpoints optimized for mobile usage patterns (small payloads, pagination where needed, predictable error formats)",
+            "Modeled DynamoDB access patterns for “today’s plan,” “upcoming reminders,” and “recent occupancy snapshots,” using TTL for cleanup",
+            "Designed EventBridge-driven reminder generation so scheduled tasks are isolated and easy to enable/disable per environment",
+            "Added guardrails for latency and scale (bounded queries, minimal fan-out, short-running Lambdas)",
+            "Defined measurable evaluation targets (missed-session reduction, engagement rate) and instrumentation points to track progress"
+        ],
+        "cloudDevOps": {
+            "infrastructure": "AWS SAM templates with nested stacks for modularity",
+            "cicd": "GitHub Actions with environment-specific deployments",
+            "monitoring": "CloudWatch dashboards, SNS alerts for anomalies",
+            "improvements": "Implemented auto-scaling policies based on time-of-day patterns"
+        },
+        "improvements": [
+            "Add predictive occupancy forecasting using historical patterns",
+            "Implement queue management for peak hours",
+            "Build analytics dashboard for facility managers"
+        ]
+    },
+    {
+        "slug": "tigertrade",
+        "title": "TigerTrade",
+        "category": "Cloud",
+        "featured": false,
+        "summary": "AWS serverless campus marketplace with RIT-only authentication for safe buying, selling, and subletting within the community.",
+        "shortDescription": "Serverless campus marketplace with IaC",
+        "role": "Cloud Developer",
+        "techStackSummary": "DynamoDB • AWS Lambda • API Gateway • React Native • Terraform",
+        "github": "https://github.com/shardul-gadadare/tiger-trade",
+        "liveDemo": null,
+        "context": "Most student marketplaces live in messy Facebook groups and random chats, where scams, anonymous profiles, and outdated posts are common. TigerTrade brings structure and safety to campus exchanges by enforcing RIT-only access via Cognito and IAM, and by modeling listings, users, and ratings on top of DynamoDB with carefully designed access patterns. API Gateway + Lambda power listing CRUD and search, while S3 handles image storage and optionally hosts the React frontend behind CloudFront. Students can buy, sell, or find sublets knowing they’re dealing with verified peers on infrastructure defined entirely as code and deployed via Terraform.",
+        "outcomes": [
+            "Expressed all core infrastructure as IaC using Terraform modules, enabling consistent provisioning and teardown of environments",
+            "Designed DynamoDB models to efficiently handle thousands of listings with fast filtering and pagination across categories and locations",
+            "Achieved low-latency request handling under load by combining API Gateway, Lambda, and DynamoDB with access patterns tuned to common marketplace queries",
+            "Reduced deployment time from manual, error-prone steps to minutes via an automated GitHub Actions + Terraform pipeline"
+        ],
+        "architecture": "TigerTrade is a serverless marketplace built entirely on AWS. API Gateway HTTP APIs route requests to Lambda functions that implement listing, search, and rating logic. DynamoDB stores listings, users, and ratings using GSIs to support flexible queries by category, price, and location. S3 is used for listing images and, the React frontend is fronted by CloudFront for global caching and HTTPS. Amazon Cognito manages authentication and enforces RIT-only access, while Terraform defines the entire infrastructure as code, deployed via GitHub Actions",
+        "techStack": {
+            "database": "DynamoDB, S3 for image storage",
+            "backend": "AWS Lambda, API Gateway",
+            "api": "REST API via API Gateway",
+            "auth": "Amazon Cognito with university email domain validation",
+            "security": "IAM least-privilege roles, input validation, content moderation workflows",
+            "frontend": "React",
+            "deployment": "Terraform IaC, GitHub Actions CI/CD"
+        },
+        "implementationHighlights": [
+            "Created reusable Terraform modules for API Gateway, Lambda, DynamoDB tables/GSIs, S3 buckets, and Cognito user pools, enabling one-click environment setup",
+            "Implemented secure image upload flows with pre-signed S3 URLs, ensuring large file uploads bypass the backend and go directly to S3",
+            "Designed DynamoDB access patterns and indexes based on real marketplace queries (by category, location, and listing status) to avoid expensive scans",
+            "Added Cognito triggers (e.g., post-confirmation) to enforce RIT email domains and enrich user profiles at signup",
+            "Built admin moderation tools to review, approve, or remove listings, ensuring the marketplace stays clean and student-focused"
+        ],
+        "cloudDevOps": {
+            "infrastructure": "Terraform with remote state in S3 and DynamoDB locking",
+            "cicd": "GitHub Actions with plan/apply workflow and manual approval",
+            "monitoring": "CloudWatch logs, X-Ray tracing, cost alerts",
+            "improvements": "Implemented blue-green deployments with API Gateway stages"
+        },
+        "improvements": [
+            "Add real-time chat between buyers and sellers",
+            "Implement recommendation engine based on browsing history",
+            "Build mobile apps for iOS and Android"
+        ]
+    }
+]
