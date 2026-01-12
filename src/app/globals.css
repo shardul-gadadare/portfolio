@@ -1,0 +1,372 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * ============================================
+ * THEME COLORS - Light/Dark Mode
+ * ============================================
+ * 
+ * To adjust colors:
+ * - Light mode: modify :root variables below
+ * - Dark mode: modify [data-theme="dark"] variables
+ * 
+ * The site defaults to light mode for CSS fallback (if JS is disabled).
+ * ThemeProvider handles system preference detection and localStorage persistence.
+ */
+
+/* Dark mode (default - forced) */
+:root {
+  /* Base */
+  --background: #020617;
+  /* very dark slate/navy */
+  --foreground: #e5e7eb;
+  /* light gray text */
+
+  /* Surfaces */
+  --card-bg: #0b1120;
+  /* slightly lighter than background for cards */
+  --card-border: #1f2937;
+  /* subtle border */
+  --card-shadow: rgba(15, 23, 42, 0.5);
+  /* slightly stronger, still soft */
+
+  /* Text */
+  --text-muted: #9ca3af;
+  /* muted gray text */
+
+  /* Accent */
+  --accent: #3b82f6;
+  /* blue-500 style accent */
+  --accent-hover: #60a5fa;
+  /* brighter blue on hover */
+
+  /* Navigation */
+  --nav-bg: rgba(2, 6, 23, 0.9);
+  /* slightly translucent dark */
+  --nav-border: rgba(148, 163, 184, 0.1);
+
+  /* Inputs */
+  /* --input-bg: #020617; */
+  --input-bg: #02091e;
+  /* slightly lighter than background for separation */
+  /* same as background */
+  --input-border: #1f2937;
+
+  /* Chips / tags */
+  --chip-bg: rgba(59, 130, 246, 0.18);
+  /* subtle blue overlay */
+  --chip-text: #dbeafe;
+  /* light blue text */
+  --chip-border: rgba(59, 130, 246, 0.5);
+
+  /* Decorative orbs / gradients */
+  --orb-opacity: 0.22;
+  /* still noticeable, but not overpowering */
+}
+
+/* Light mode (preserved for future re-enablement)
+[data-theme="light"] {
+  --background: #f9fafb;
+  --foreground: #0f172a;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --card-shadow: rgba(15, 23, 42, 0.04);
+  --text-muted: #6b7280;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --nav-bg: rgba(249, 250, 251, 0.9);
+  --nav-border: rgba(15, 23, 42, 0.06);
+  --input-bg: #ffffff;
+  --input-border: #d1d5db;
+  --chip-bg: #e0edff;
+  --chip-text: #1d4ed8;
+  --chip-border: #bfdbfe;
+  --orb-opacity: 0.08;
+}
+*/
+
+/* Dark mode selector (kept for compatibility, same as :root now) */
+[data-theme="dark"] {
+  /* Base */
+  --background: #020617;
+  /* very dark slate/navy */
+  --foreground: #e5e7eb;
+  /* light gray text */
+
+  /* Surfaces */
+  --card-bg: #0b1120;
+  /* slightly lighter than background for cards */
+  --card-border: #1f2937;
+  /* subtle border */
+  --card-shadow: rgba(15, 23, 42, 0.5);
+  /* slightly stronger, still soft */
+
+  /* Text */
+  --text-muted: #9ca3af;
+  /* muted gray text */
+
+  /* Accent */
+  --accent: #3b82f6;
+  /* blue-500 style accent */
+  --accent-hover: #60a5fa;
+  /* brighter blue on hover */
+
+  /* Navigation */
+  --nav-bg: rgba(2, 6, 23, 0.9);
+  /* slightly translucent dark */
+  --nav-border: rgba(148, 163, 184, 0.1);
+
+  /* Inputs */
+  /* --input-bg: #020617; */
+  --input-bg: #02091e;
+  /* slightly lighter than background for separation */
+  /* same as background */
+  --input-border: #1f2937;
+
+  /* Chips / tags */
+  --chip-bg: rgba(59, 130, 246, 0.18);
+  /* subtle blue overlay */
+  --chip-text: #dbeafe;
+  /* light blue text */
+  --chip-border: rgba(59, 130, 246, 0.5);
+
+  /* Decorative orbs / gradients */
+  --orb-opacity: 0.22;
+  /* still noticeable, but not overpowering */
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+  /* Smooth theme transitions */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Glassmorphism card effect */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  transition: all 0.3s ease, background-color 0.2s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(37, 99, 235, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px var(--card-shadow);
+}
+
+/* Gradient text - now solid dark blue */
+.gradient-text {
+  color: #2563eb;
+  /* Original gradient preserved below for reference:
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  */
+}
+
+/* Accent button */
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--foreground);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid var(--card-border);
+  transition: all 0.3s ease, background-color 0.2s ease, color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  background: rgba(37, 99, 235, 0.1);
+}
+
+/* Skill chip */
+.skill-chip {
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid var(--chip-border);
+  transition: all 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.skill-chip:hover {
+  background: rgba(37, 99, 235, 0.2);
+  border-color: rgba(37, 99, 235, 0.4);
+}
+
+/* Section styles */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+  transition: color 0.2s ease;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  max-width: 600px;
+  transition: color 0.2s ease;
+}
+
+/* Timeline */
+.timeline-item {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 2px solid var(--card-border);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--background);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Background gradient orbs */
+.bg-gradient-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: var(--orb-opacity);
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.orb-1 {
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  top: -200px;
+  right: -200px;
+}
+
+.orb-2 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #60a5fa, #2563eb);
+  bottom: -100px;
+  left: -100px;
+}
+
+/* Form inputs - theme aware */
+input,
+textarea,
+select {
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--foreground);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Link colors */
+a {
+  color: var(--accent);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
