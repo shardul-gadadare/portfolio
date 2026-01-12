@@ -1,0 +1,32 @@
+[
+    {
+        "id": "cognizant",
+        "title": "Software Engineer",
+        "company": "Cognizant Technology Solutions",
+        "location": "Mumbai, India",
+        "startDate": "2021-07",
+        "endDate": "2023-06",
+        "type": "full-time",
+        "bullets": [
+            "Increased client satisfaction by 35% by engineering and deploying full-stack features in Python backends and React frontends, enhancing core workflows and overall product reliability",
+            "Boosted user engagement by 20% by revamping the Cognizant ONE UI in React.js and JavaScript, to improve responsiveness, interaction flow and optimizing component rendering, page load performance for high-traffic modules",
+            "Improved system uptime by 25% by designing and implementing Linux-based services in C/C++, tuning memory and I/O usage to integrate reliably with existing legacy systems and optimizing performance for stable production operation",
+            "Accelerated release reliability and developer throughput by automating builds, tests, and deployment workflows; using CI/CD pipelines, pull requests, code reviews, load/stress, unit/integration/E2E tests; across multiple services",
+            "Reduced API response times and improved scalability by designing and implementing RESTful APIs and background requests, with robust validation and error handling to optimize data processing efficiency"
+        ]
+    },
+    {
+        "id": "siemens",
+        "title": "Software Engineering Intern",
+        "company": "Siemens",
+        "location": "Mumbai, India",
+        "startDate": "2020-01",
+        "endDate": "2020-04",
+        "type": "internship",
+        "bullets": [
+            "Improved prototype operational efficiency by 15% by leading a small team in the Switchgear Plant Engineering department towards the development of IoT-based production technology prototypes, automating data collection and control flows for manufacturing scenarios",
+            "Built scalable, real-time IoT solutions using Python, ARM Embed, Arduino, and Raspberry Pi (RPi) to collect, process, and transmit sensor data from shop-floor equipment",
+            "Reduced system deployment time by 10% by delivering real-time IoT solutions, using Python with ARM Embed, Arduino, and Raspberry Pi, aligned with industry stakeholders for scalable implementation"
+        ]
+    }
+]
