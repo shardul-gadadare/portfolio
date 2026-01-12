@@ -1,3 +1,5 @@
+const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
+
 interface ResumeButtonsProps {
     variant?: 'stacked' | 'inline';
 }
@@ -10,7 +12,7 @@ export default function ResumeButtons({ variant = 'inline' }: ResumeButtonsProps
     return (
         <div className={containerClass}>
             <a
-                href="/resumes/Shardul_Gadadare_FullStack.pdf"
+                href={`${basePath}/resumes/Shardul_Gadadare_FullStack.pdf`}
                 download="Shardul_Gadadare_FullStack_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -22,7 +24,7 @@ export default function ResumeButtons({ variant = 'inline' }: ResumeButtonsProps
                 Full-Stack Resume (PDF)
             </a>
             <a
-                href="/resumes/Shardul_Gadadare_Cloud.pdf"
+                href={`${basePath}/resumes/Shardul_Gadadare_Cloud.pdf`}
                 download="Shardul_Gadadare_Cloud_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -36,3 +38,4 @@ export default function ResumeButtons({ variant = 'inline' }: ResumeButtonsProps
         </div>
     );
 }
+
