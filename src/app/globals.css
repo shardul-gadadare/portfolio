@@ -18,16 +18,16 @@
 /* Dark mode (default - forced) */
 :root {
   /* Base */
-  --background: #020617;
-  /* very dark slate/navy */
+  --background: #0f172a;
+  /* lighter slate/navy */
   --foreground: #e5e7eb;
   /* light gray text */
 
   /* Surfaces */
-  --card-bg: #0b1120;
-  /* slightly lighter than background for cards */
-  --card-border: #1f2937;
-  /* subtle border */
+  --card-bg: #1e293b;
+  /* lighter than background for cards */
+  --card-border: #334155;
+  /* more visible border */
   --card-shadow: rgba(15, 23, 42, 0.5);
   /* slightly stronger, still soft */
 
@@ -42,16 +42,15 @@
   /* brighter blue on hover */
 
   /* Navigation */
-  --nav-bg: rgba(2, 6, 23, 0.9);
+  --nav-bg: rgba(15, 23, 42, 0.95);
   /* slightly translucent dark */
-  --nav-border: rgba(148, 163, 184, 0.1);
+  --nav-border: rgba(148, 163, 184, 0.2);
+  /* more visible border */
 
   /* Inputs */
-  /* --input-bg: #020617; */
-  --input-bg: #02091e;
+  --input-bg: #1e293b;
   /* slightly lighter than background for separation */
-  /* same as background */
-  --input-border: #1f2937;
+  --input-border: #334155;
 
   /* Chips / tags */
   --chip-bg: rgba(59, 130, 246, 0.18);
@@ -89,16 +88,16 @@
 /* Dark mode selector (kept for compatibility, same as :root now) */
 [data-theme="dark"] {
   /* Base */
-  --background: #020617;
-  /* very dark slate/navy */
+  --background: #0f172a;
+  /* lighter slate/navy */
   --foreground: #e5e7eb;
   /* light gray text */
 
   /* Surfaces */
-  --card-bg: #0b1120;
-  /* slightly lighter than background for cards */
-  --card-border: #1f2937;
-  /* subtle border */
+  --card-bg: #1e293b;
+  /* lighter than background for cards */
+  --card-border: #334155;
+  /* more visible border */
   --card-shadow: rgba(15, 23, 42, 0.5);
   /* slightly stronger, still soft */
 
@@ -113,16 +112,15 @@
   /* brighter blue on hover */
 
   /* Navigation */
-  --nav-bg: rgba(2, 6, 23, 0.9);
+  --nav-bg: rgba(15, 23, 42, 0.95);
   /* slightly translucent dark */
-  --nav-border: rgba(148, 163, 184, 0.1);
+  --nav-border: rgba(148, 163, 184, 0.2);
+  /* more visible border */
 
   /* Inputs */
-  /* --input-bg: #020617; */
-  --input-bg: #02091e;
+  --input-bg: #1e293b;
   /* slightly lighter than background for separation */
-  /* same as background */
-  --input-border: #1f2937;
+  --input-border: #334155;
 
   /* Chips / tags */
   --chip-bg: rgba(59, 130, 246, 0.18);
